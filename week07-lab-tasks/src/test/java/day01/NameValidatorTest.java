@@ -12,15 +12,15 @@ class NameValidatorTest {
     }
 
     @Test
-    void isNameValidNullTest(){
+    void isNameValidNullTest() {
         IllegalArgumentException iae = assertThrows(IllegalArgumentException.class,
                 () -> new NameValidator().isNameValid(null));
         assertEquals("A név minimum két részből kell hogy álljon!", iae.getMessage());
     }
 
     @Test
-    void isNameValidWrongNameTest(){
-        IllegalArgumentException iae =assertThrows(IllegalArgumentException.class,
+    void isNameValidWrongNameTest() {
+        IllegalArgumentException iae = assertThrows(IllegalArgumentException.class,
                 () -> new NameValidator().isNameValid("Kiss"));
         assertEquals("A név minimum két részből kell hogy álljon!", iae.getMessage());
     }

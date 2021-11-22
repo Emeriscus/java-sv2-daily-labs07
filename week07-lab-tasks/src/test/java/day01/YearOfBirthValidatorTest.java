@@ -9,12 +9,12 @@ class YearOfBirthValidatorTest {
     YearOfBirthValidator yobv = new YearOfBirthValidator();
 
     @Test
-    void yearOfBirthValidatorTest(){
+    void yearOfBirthValidatorTest() {
         assertTrue(yobv.isYearOfBirthValid(1901));
     }
 
     @Test
-    void YearOfBirthValidatorWrongYearTest(){
+    void YearOfBirthValidatorWrongYearTest() {
         IllegalArgumentException iae = assertThrows(IllegalArgumentException.class,
                 () -> yobv.isYearOfBirthValid(1900));
         assertEquals("A kor nem lehet több mint 120 év!", iae.getMessage());

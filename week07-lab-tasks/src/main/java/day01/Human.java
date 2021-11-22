@@ -8,11 +8,11 @@ public class Human {
     public Human(String name, int yearOfBirth) {
 
         NameValidator nameValidator = new NameValidator();
-        YearOfBirthValidator yearOfBirthValidator= new YearOfBirthValidator();
+        YearOfBirthValidator yearOfBirthValidator = new YearOfBirthValidator();
 
-        if (nameValidator.isNameValid(name) && yearOfBirthValidator.isYearOfBirthValid(yearOfBirth)){
-            this.yearOfBirth=yearOfBirth;
-            this.name=name;
+        if (nameValidator.isNameValid(name) && yearOfBirthValidator.isYearOfBirthValid(yearOfBirth)) {
+            this.yearOfBirth = yearOfBirth;
+            this.name = name;
         }
     }
 

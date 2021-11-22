@@ -32,9 +32,9 @@ class HumanTest {
     }
 
     @Test
-    void testHumanConstructorWrongYearOfBirth(){
-        IllegalArgumentException iae=assertThrows(IllegalArgumentException.class,
-                ()-> new Human("Papp Pisti", 1900));
+    void testHumanConstructorWrongYearOfBirth() {
+        IllegalArgumentException iae = assertThrows(IllegalArgumentException.class,
+                () -> new Human("Papp Pisti", 1900));
 
         assertEquals("A kor nem lehet több mint 120 év!", iae.getMessage());
     }
