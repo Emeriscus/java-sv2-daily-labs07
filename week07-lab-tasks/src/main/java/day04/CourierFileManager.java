@@ -12,7 +12,6 @@ public class CourierFileManager {
     }
 
     private List<String> getRideListStringByFile(Path path) {
-
         try {
             return Files.readAllLines(path);
         } catch (IOException ioe) {
@@ -26,6 +25,10 @@ public class CourierFileManager {
             courier.addRide(getRide(actual));
         }
         return courier;
+    }
+
+    private Ride getRide(String actual) {
+        return new Ride(getDay(actual), getNumberOfRide(actual), getDistance(actual));
     }
 
     private int getDay(String actual) {
@@ -52,8 +55,8 @@ public class CourierFileManager {
         }
     }
 
-    private Ride getRide(String actual) {
-        return new Ride(getDay(actual), getNumberOfRide(actual), getDistance(actual));
+    public static void main(String[] args) {
+        CourierFileManager courierFileManager=new CourierFileManager();
+        courierFileManager.createCourierByFile(Path.of("src/main/resources/rides.txt"));
     }
-
 }

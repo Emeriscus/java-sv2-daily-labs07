@@ -16,15 +16,31 @@ public class Courier {
         }
     }
 
+    private boolean isValidRide(Ride ride){
+        if (isValidDay(ride)){
+            return isValidNumberOfRide(ride);
+        }
+        return false;
+    }
+
     private boolean isValidDay(Ride ride){
+        if (rides.size()==0) {
+            return true;
+        }
         return ride.getDay() >= rides.get(rides.size()-1).getDay();
     }
 
     private boolean isValidNumberOfRide(Ride ride) {
-        return ride.getNumberOfRide() >= rides.get(rides.size()-1).getNumberOfRide();
+        if (rides.size()==0){
+            return true;
+        }
+        if (ride.getDay()==rides.get(rides.size()-1).getDay()) {
+            return ride.getNumberOfRide() >= rides.get(rides.size() - 1).getNumberOfRide();
+        }
+        return true;
     }
 
-    private boolean isValidRide(Ride ride){
-        return isValidDay(ride) && isValidNumberOfRide(ride);
+    public List<Ride> getRides() {
+        return rides;
     }
 }
